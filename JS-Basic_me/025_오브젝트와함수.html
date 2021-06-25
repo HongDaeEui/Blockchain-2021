@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //오브젝트 내에서 함수 선언
+        var person = {
+            firstNAme: "Jhon",
+            LastName: "Doe",
+            // getFullName: function () {
+            //     return this.firstName + " " + this.LastName;
+            // }
+        };
+
+        person.getFullName = function () {
+            return this.firstName + " " + this.LastName;
+        }
+
+        //오브젝트 선언, new로 선언이 가능
+
+        var person = {};
+
+        var person = new Object();
+
+        person.firstName = "Jhon";
+        person.LastName = "Doe";
+        person.getFullName = function () {
+            return this.firstName + " " + this.LastName;
+        }
+    </script>
+</body>
+
+</html>

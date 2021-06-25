@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var txt = "abcdefghafs";
+        console.log(txt.length);
+
+        var txt = "Please locate where locate occur!";
+        console.log(txt.indexOf("qfqwfq")); //없는 문자열이라 -1로 나옴
+        if (txt.indexOf("locate") > -1) {
+
+        }
+
+        var tel = "010-0303-2222";
+
+        if (tel.indexOf("-") > -1) {
+            console.log("")
+        }
+
+        //slice - 두 개의 피라미터, 첫번째 - 시작 인덱스 번호, 두번째 - 종료 인덱스 번호
+        //주민등록번호상 남자, 여자 분류할 때 사용할 수 있음.
+        var text = "Apple, Banana, Kiwi";
+        console.log(text.slice(7, 13));
+        console.log(text.slice(7));
+        console.log(text.slice(-12));
+
+        //substring == slice, 음수가 되지 않도록 구현한 텍스트 슬라이스 기능
+        console.log(text.substring(7, 13));
+        console.log(text.substring(7));
+
+        //substr = 첫번째 - 시작인덱스번호, 두번째 - 잘라낼 길이
+        var date = "20100624"
+        var year = date.slice(0, 4);
+        var year2 = date.substring(0, 4);
+        var year3 = date.substr(0, 4);
+
+        var month = date.slice(4, 6);
+        var month = date.substring(4, 6);
+        var month = date.substr(4, 2);
+
+        var day = date.slice(-2);
+        var day = date.substring(6);
+        var day = date.substr(6, 2);
+
+        var date = "2021.10.24"; //2021-10-24
+        date.substring(0, date.indexOf("."));
+        date.substring(date.indexOf(".") + 1, date.lastIndexOf("."));
+        var year = date.substr(0, 4);
+        var month = date.substr(5, 2);
+        var day = date.slice(-2);
+
+        console.log(year + "-" + month + "-" + day);
+
+        //replace
+        var date = "2021.10.24"; //2021-10-24
+        console.log(date.replace(".", "-"));
+        console.log(date.replace(".", "-")); //.을 두 번 바꿈.
+
+        // console.log(date.replace(/\./g, "-")); 정규식을 써서 계속해서 바뀌는 replace 사용
+    </script>
+</body>
+
+</html>

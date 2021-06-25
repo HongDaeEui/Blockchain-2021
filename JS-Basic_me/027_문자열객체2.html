@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //toUpperCase()
+        var txt = "Hello World";
+        console.log(txt.toUpperCase());
+
+        //toLowerCase()
+        console.log(txt.toLowerCase());
+
+        //concat() - 문자열을 합쳐준다.
+        var text1 = "Hello";
+        var text2 = "Wolrd";
+        console.log(text1.concat(" ", text2, "!"));
+
+        //trim()
+        var text = "     Hello World     ";
+        console.log(text);
+        console.log(text.trim());
+
+        //padStart() //첫번째 - 문자열의 총길이, 두번째 = 뭘로 채울래??
+        var txt = "5";
+        console.log(txt.padStart(4, 0));
+
+        // 첫번째 문자열, 두번째 총길이, 세번째 뭘로 채울지?
+        function fillChar(inputString, len, fillString) {
+
+            while (inputString.length < len) {
+                inputString = fillString + inputString;
+            }
+            return inputString;
+        }
+        console.log(fillChar("9", 5, "2"));
+
+        //padEnd
+        var txt = "5";
+        console.log(txt.padEnd(4, 0));
+    </script>
+</body>
+
+</html>

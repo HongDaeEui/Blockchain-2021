@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../JS-Basic_me/javascript-basic-main/javascript-basic-main/scripts/4-04.user_data.js"></script>
+    <script>
+        //Array 객체 내장 함수
+        var arr = ["A", "B", "C", "D"];
+
+        //toString(); 문자로 바꿔줌
+        console.log(arr.toString());
+
+        //join() 개체 중간에 문자를 넣어줌
+        console.log(arr.join("-"));
+
+        //pop() 배열 끝에서부터 제거 
+        console.log(arr.pop(""));
+        console.log(arr);
+        // var x = arr.pop();
+
+        //push() 배열에 문자를 추가함
+        arr.push("E");
+        console.log(arr);
+
+        //shift() 배열의 맨 앞을 제거
+        console.log(arr.shift());
+        console.log(arr);
+        
+        //unshift() 앞에다 원하는 문자를 추가
+        arr.unshift("1");
+        console.log(arr);
+
+        //splice(x, y, z) x번째 인덱스의 요소에 x번째부터 y개의 요소를 삭제하고, z를 추가
+        console.log(arr);
+        console.log(arr.splice(1, 0, "2","3","4"));
+        
+        //concat()
+        var myDaughter = ["남명혜", "김규비"];
+        var mySon = ["정재승", "정경민"];
+        var myChildren = myDaughter.concat(mySon);
+        console.log(myChildren);
+
+        //slice(p1, p2) 짜르는 것, p1부터 p2 전까지 요소의 복사본을 새로운 배열 객체로 반환함. 원본 배열은 수정되지 않음. 
+        var arr1 = myChildren.slice(1, 3);
+        console.log(arr1);
+
+        //sort() 정렬을 해줌. 
+        var arrSort = myChildren.sort();
+        console.log(arrSort);
+        console.log(arrSort.reverse());
+        
+        //sort()의 부족한 점, 정렬할 때 문자로 인식함. 
+        var points = [34, 12, 45, 22, 6, 8, 2, 54];
+        console.log(points.sort());
+
+        var p = points.sort(function(a, b) {
+            if (a>b) return 1;
+            else if (a<b) return -1;
+            else return 0;
+        });
+        // 알고리즘을 이해하려면 어려우니 저렇게 바꿀 수 있다는 것을 알아두자. 비교해서 가져옴.
+        // return a-b;를 사용할 수도 있음. 1, -1은 상징적인 값. 양수, 음수, 0이 중요함.
+        // 양수면 바꾸고, 음수면 바꾸지 않음.
+        // 반대로 return b-a;을 하면 큰 수부터 정렬이 됨. 
+        // 실무에서 정말 많이 씀.
+
+        //오브젝트 배열 정렬
+        var productList = [{
+                name: "솔의눈",
+                price: 700
+            },
+            {
+                name: "커피",
+                price: 700
+            },
+            {
+                name: "파워에이드",
+                price: 1200
+            },
+            {
+                name: "제로콜라",
+                price: 1600
+            },
+            {
+                name: "벼락식혜",
+                price: 800
+            }
+          ];
+
+        var p2 = productList.sort(function (a, b) {
+            // if (a.price > b.price) return 1;
+            // else if (a.price < b.price) return -1;
+            // else return 0;
+
+            return b.price - a.price;
+        });
+
+        var OrderbyUserAge = userList.sort(function (a, b) {
+            return a.age - b.age;
+        });
+
+        console.table(OrderbyUserAge);
+        
+        var OrderbyUsesrName = userList.sort(function (a, b) {
+            return a.name > b.name;
+        });
+
+        console.table(OrderbyUsesrName);
+        
+        var OrderbyUsesrRegistered = userList.sort(function (a, b) {
+            return a.registered > b.registered;
+        });
+
+        console.table(OrderbyUsesrRegistered);
+        
+        //sort를 함수로 구현해보기, 보통 자바스크립트 내장 함수의 원리
+
+        // function sort(func) {
+        //     var len = point.length;
+        //     for(var i=0 ; i<len ; i++) {
+        //         if(func(points[i], points[i+1])) {
+        //             points.slice(i,i+1)
+        //         }
+        //     }
+        // }
+
+        // sort(function(a,b){return b-a});
+
+        //filter() 특정 조건에 맞는 요소들을 가져옴.
+
+        var points = [34, 12, 45, 22, 6, 8, 2, 54]; 
+
+        points.filter(function(p){
+            return p > 20;
+        });
+        // filter함수 내부 메커니즘
+        // var outputList = [];
+        // for(var p of points){
+        //     if(p >20) {
+        //         outputList.push(p);
+        //     }
+        // }
+
+        // return 
+
+        // function filter(arr, func) {
+        //     var output = [];
+        //     for(var a of arr) {
+        //         if(func(a)){
+        //             output.push(a);
+        //         }
+        //     }
+
+        //     return output;
+        // }
+    
+    //    filter(points, function(p){
+    //         return p > 20;
+    //     });
+
+    var output = userList.filter(function(user) {
+        return user.gender == "male" && (user.age <= 25 || user.age >= 35);
+    });
+    
+    console.log(output);
+    
+    //map() 배열의 각 요소가 오브젝트일 경우만 map을 씀. map을 통과하면 배열 안에 있는 오브젝트들의 구조를 새롭게 만들어줌. 배열 안의 구조를 커스터마이징 가능함. 
+    //오브젝트 안의 키가 많을 경우 데이터를 간소화하기 위해 쓰거나, 새로운 키, 밸류값이 필요해서 만들어 추가하고 싶을 때 사용.
+
+    var userList = [{
+            firstName: "종국",
+            lastName: "김",
+            email: "yang@gamil.com"   
+        },
+        {
+            firstName: "종국",
+            lastName: "김",
+            email: "yang@gamil.com"   
+        },
+        {
+            firstName: "종국",
+            lastName: "김",
+            email: "yang@gamil.com"   
+        },
+        {
+            firstName: "종국",
+            lastName: "김",
+            email: "yang@gamil.com"   
+        }
+
+    ];
+
+    console.log(userList);
+
+    var newuserList = userList.map(function(user){
+        return {
+            "firstName" : user.firstName,
+            "lastName" : user.lastName,
+            "fullName" : user.firstName + user.lastName
+        }
+    });
+    //새롭게 userList 배열의 오브젝트 구조를 바꿔주었음. 
+    console.log(newuserList);
+    
+    //reduce() 첫 번째 파라미터는 누적 변수, 두번째 파라미터는 현재 값을 주어서, 배열 안에 있는 숫자 값들의 합을 구할 때 사용됨.
+    //세번째 인덱스는 currentIndex
+    //네번째 인덱스는 arr
+    //보통은 두 번째 파라미터까지만 씀.
+    
+    var total = points.reduce(function(sum, currentValue) {
+        return sum + currentValue;
+        
+    });
+    console.log("total", total);
+
+    var total = points.reduce((sum,currentValue) => sum + currentValue); //arrow 함수사용하면 간소화 가능
+    
+
+
+    </script>
+</body>
+</html>

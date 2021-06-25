@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../JS-Basic_me/javascript-basic-main/javascript-basic-main/scripts/4-04.user_data.js"></script>
+    <script>
+        function getUserList(gender,minage,maxage) {
+
+            var outputUserList = [];
+
+            for (var user of userList) {
+                if (user.gender == gender && (user.age <= minage || user.age >= maxage)) {
+
+                    outputUserList.push(user);
+                }
+            }
+            return outputUserList
+        }
+
+        console.table(getUserList("male",25,30));
+    </script>
+</body>
+
+</html>
+

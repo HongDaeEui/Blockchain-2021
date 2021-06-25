@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Date() PC의 시간이 나옴.
+        // var d = new Date(2020, 5, 24, 13, 23, 12, 000);
+        // console.log(d.getFullYear());
+
+        // var d new Date(0); //1970년 1월 1일이 찍힘.
+        // console.log(d);
+
+
+        var d = new Date();
+        console.log(d);
+
+        var year = d.getFullYear();
+        console.log("year", year); //1,2,3.. 부터 시작
+
+        var month = d.getMonth();
+        console.log("month", month); //0부터 시작, 프로그램을 만들면 각 나라별 달 이름으로 바꿔주기 위해서 0부터 시작함.
+
+        const monthName = ["Jan", "Feb", "Mar", "Apr"];
+        console.log(monthName[month]);
+        
+
+        var day = d.getDate();
+        console.log("day", day) //1,2,3..부터 시작
+
+        var hour = d.getHours();
+        console.log("hour", hour);
+
+        var minute = d.getMinutes();
+        console.log("minute", minute);
+
+        var second = d.getSeconds();
+        console.log("second", second);
+        
+        // var millisecond = d.getMilliSeconds();
+        // console.log("millisecond", millisecond);
+        
+        console.log(d.getTime()); //1971년 1월 1일을 기준으로 밀리초의 값이 나옴. 날짜를 계산하기 위해서 사용됨.
+        
+        var dayNameIndex = d.getDay(); //0-일요일, 1-월요일, 2-화요일..
+        console.log("dayName", dayNameIndex);
+
+        //getTime()의 용도, 사용자가 가입한 날짜를 조회하고 싶을 때 기본 날짜의 시작과 끝을 몇 일 간격으로 할까요 했을 때 오늘 기준으로 한 달, 일주일 선택을 할 수 있게 해달라 함. 그럴 때 오늘 날짜를 구하고 일주일의 밀리세컨드 값을 구해서 빼면 일주일 전의 날짜를 구할 수 있음.
+
+        var now = new Date();
+        // now.getTime();
+
+        var d = new Date(now.getTime());
+        console.log(d);
+        
+        
+        //실습 해보기)
+        //함수명 - getIntervalDate()
+        //오늘을 기준으로 몇일 후, 몇일 전의 그 날짜
+        //정수 - 양수, 음수
+        //return - 년도/월/일
+
+        // var now = new Date();
+        // console.log(now.getTime());
+
+        // function getIntervalDate(intervalDay) {
+            
+        //     var now = new Date();
+        //     now.getTime();
+        //     var dayCaculation = now.getTime() + intervalDay*60*60*24*1000;
+        //     var afterDay = new Date(dayCaculation);
+            
+        //     return afterDay;
+        // }
+
+        // console.log(getIntervalDate(3));
+
+        
+        function getIntervalDate(intervalDay) {
+            var now = new Date();
+            // return new Date(now.getTime()+ ((60 * 60 * 24 * 1000) * intervalDay)); 
+            var d = new Date(now.getTime()+ ((60 * 60 * 24 * 1000) * intervalDay));
+            var year = d.getFullYear();
+            var month = d.getMonth()+1;
+            var day = d.getDate();
+
+            return year + "/" + month.toString().padStart(2,0) + '/' +day;
+            
+        }
+
+        function getIntervalDate(intervalDay, format) {
+            var now = new Date();
+            var d = new Date(now.getTime()+ ((60 * 60 * 24 * 1000) * intervalDay));
+            var year = d.getFullYear();
+            var month = d.getMonth()+1;
+            var day = d.getDate();
+
+            return format.replace("YYYY", year).replace("MM", month.toString().padStart(2,0)).replace("DD", day);
+            
+        }
+
+        console.log(getIntervalDate(-5, "YYYY-MM-DD"));
+        console.log(getIntervalDate(-5, "YYYY.MM.DD"));
+        console.log(getIntervalDate(-5, "DD.MM.YYYY"));
+        
+        
+        
+    </script>
+</body>
+</html>

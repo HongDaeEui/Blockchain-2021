@@ -1,0 +1,44 @@
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var productlist = [{
+                name: "솔의눈",
+                price: 700
+            },
+            {
+                name: "커피",
+                price: 700
+            },
+            {
+                name: "파워에이드",
+                price: 1200
+            },
+            {
+                name: "오렌지",
+                price: 1000
+            },
+            {
+                name: "보리차",
+                price: 1200
+            },
+            {
+                name: "밀키스",
+                price: 800
+            }
+        ];
+
+        function getDrink(inputCoin) {
+            
+        return productlist.filter(function (money) {
+            return money.price <= inputCoin;
+        });
+        }
+
+        console.table(getDrink(1100));
+    </script>
+</body>
+
+</html>

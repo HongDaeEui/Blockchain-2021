@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //문제, 배열안에 배열, for-loop
+    함수, 함수명 - pringArray, 파라미터 - 배열, 출력 - console.log -->
+    <script>
+        var arr = [
+            [1,2,3,4,5],
+            [3,12,33,24,15],
+            [4,7,12,3,9],
+            [12,32,56,23,90],
+            [5,9,7,21,19]
+        ];
+
+        function printArray (array) {
+            for(var i=0;i<arr.length;i++) { 
+                for(var j=0;j<array[i].length;j++) {
+                    console.log(array[i][j]);
+                    
+                }
+            }
+        }
+
+        printArray(arr);
+
+        function print2DArray (arr2D) {
+            let len1 = arr2D.length; //6
+
+            for(let i=0; i<len1; i++) {
+
+                let len2 = arr2D[i].length;
+
+                    for(let j=0; j<len2; j++) {
+
+                        console.log(arr2D[i][j]);
+                }
+            }
+        }
+
+        print2DArray(arr);
+    </script>
+</body>
+
+</html>
+        
+        

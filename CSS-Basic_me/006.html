@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    /* 하위 선택자 띄어쓰기로 섹션 안 모든 ul 태그 검색 */
+    /*  section ul {
+      border: 1px dotted black;
+      font-size: 14pt;
+    } */
+
+    /* 자식 선택자 >할 경우 섹션 안에 바로 나온 ul 태그 찾기
+    섹션 안에 첫 ul에 id를 부여한 것과 같음*/
+    section>ul {
+      border: 1px dotted black;
+      font-size: 14pt;
+    }
+
+    #sec01 ul {
+      border: 1px dotted black;
+      font-size: 14pt;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="sec01">
+    <p>P</p>
+    <ul>
+      <li>
+        <ul>
+          <li>A</li>
+          <li>B</li>
+        </ul>
+      </li>
+      <li>C</li>
+    </ul>
+  </section>
+</body>
+
+</html>

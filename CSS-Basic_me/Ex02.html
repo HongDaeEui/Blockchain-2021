@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 3em;
+            text-align: center;
+        }
+
+        .top {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .top td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 30px;
+            padding: 3px 2px;
+        }
+
+        .top tr>td:nth-child(1) {
+            background-color: skyblue;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .top tr:nth-child(1)>td:nth-child(4),
+        .top tr:nth-child(1)>td:nth-child(5) {
+            background-color: skyblue;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.4em;
+            text-align: center;
+        }
+
+        .main {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .main td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 2em;
+            padding: 10px;
+        }
+
+        .main tr:nth-child(1)>td {
+            background-color: skyblue;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .main tr>td:nth-child(1),
+        .main tr>td:nth-child(2) {
+            text-align: center;
+        }
+
+        .main tr:nth-child(10)>td:nth-child(1),
+        .main tr:nth-child(11)>td:nth-child(1) {
+            background-color: skyblue;
+            font-weight: bold;
+            text-align: center;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 교육 훈련 일지 -->
+    <h1>교육&nbsp;훈련&nbsp;일지</h1>
+
+    <!-- 담당자 -->
+    <table class="top">
+        <tr>
+            <td>과정명</td>
+            <td>블록체인 비즈니스 모델 개발</td>
+            <td rowspan="3"></td>
+            <td>강사</td>
+            <td>담당</td>
+        </tr>
+        <tr>
+            <td>교육장소</td>
+            <td>월드메르디앙 비즈센터 4층 405호</td>
+            <td rowspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <td>강사명</td>
+            <td>고승원</td>
+        </tr>
+    </table>
+
+    <!-- 날짜 -->
+    <p>2021년 06월 21일 월요일</p>
+
+    <!-- 본문 -->
+    <table class="main">
+        <tr>
+            <td>교시</td>
+            <td>시간</td>
+            <td>교육내용</td>
+        </tr>
+        <tr>
+            <td>1교시</td>
+            <td>09:00~10:00</td>
+            <td>HTML 시멘틱 요소, HTML 최종 정리</td>
+        </tr>
+        <tr>
+            <td>2교시</td>
+            <td>10:00~11:00</td>
+            <td>CSS란? CSS syntax, CSS 선택자</td>
+        </tr>
+        <tr>
+            <td>3교시</td>
+            <td>11:00~12:00</td>
+            <td>CSS 적용 방법, CSS 주석처리, CSS colors, CSS Background</td>
+        </tr>
+        <tr>
+            <td>4교시</td>
+            <td>13:00~14:00</td>
+            <td>실습, CSS Border</td>
+        </tr>
+        <tr>
+            <td>5교시</td>
+            <td>14:00~15:00</td>
+            <td>Height/width, CSS Box Moder, CSS Outline, CSS font, Link</td>
+        </tr>
+        <tr>
+            <td>6교시</td>
+            <td>15:00~16:00</td>
+            <td>CSS Table 실습 : Table에 CSS 적용하기</td>
+        </tr>
+        <tr>
+            <td>7교시</td>
+            <td>16:00~17:00</td>
+            <td>실습 : CSS 적용 문서 화면 구현</td>
+        </tr>
+        <tr>
+            <td>8교시</td>
+            <td>17:00~18:00</td>
+            <td>CSS Position, Overflow, Responsive(Media Query)</td>
+        </tr>
+        <tr>
+            <td colspan="2">일과 후 과제사항</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                특이사항<br><a style="font-weight: lighter;">(교육생 및 운영진 요청사항)</a>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

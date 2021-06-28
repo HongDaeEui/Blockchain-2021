@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: red;
+            text-align: center;
+        }
+
+        .bg-red {
+            background-color: rgb(224, 210, 210);
+        }
+
+        #001 {
+            width: 50%;
+            font-size: 18pt;
+        }
+
+        /* #sec01 ul {
+            border: 1px double black;
+            font-size: 15pt;
+        } */
+
+        section>ul {
+            border: 1px dotted black;
+        }
+
+        p~section {
+            background-color: chartreuse;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            border: 1px solid rgb(17, 196, 32);
+        }
+
+        a:hover {
+            color: red;
+            font-weight: bold;
+        }
+
+        body {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>CSS 적용하기</p>
+    <div class="bg-red h-100 text-white">CLass</div>
+    <div id="001">001</div>
+
+    <section id="sec01">
+        <p>P</p>
+        <ul>
+            <li>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                </ul>
+            </li>
+            <li>C</li>
+        </ul>
+    </section>
+    <a href="/link">링크</a>
+    <input type="text" name="" id="">
+</body>
+
+</html>

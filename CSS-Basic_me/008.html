@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    /* E[attr] 형식 => 속성 태그 전달은 어느정도 쓰임 */
+    a[href] {
+      color: black;
+      text-decoration: none;
+    }
+
+    /* E[attr=”val”] 형식 => 체크박스의 체크한 것 까지도 가져올 수 있음. 자바스크립트 배울 때 자주 쓰이는 요소 */
+    input[type="text"] {
+      width: 200px;
+      border: 1px solid rgb(34, 143, 110);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/link">링크</a>
+  <input type="text">
+</body>
+
+</html>

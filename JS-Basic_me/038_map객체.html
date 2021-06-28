@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="../../ClassEdu/javascript-basic-main/javascript-basic-main/scripts/4-04.user_data.js">
+    </script>
+    <script>
+        // set과 달리 현재 실무에서 쓰이고 있음.
+        // Map 기존 오브젝트에서는  array["key"] 이런식으로 불러오는 것이 프로그램스럽지 않음.
+        // set은 데이터를 넣어주고, get은 데이터를 얻음.
+        // 1. 또한 key로 오브젝트나 배열을 넣을 수 있음
+        // 2. size를 통해 바로 키 사이즈를 알 수 있음.
+        // 3. 오브젝트와 달리 키에 대한 순서를 보장해줌. 
+        // var key1 = {'keyname':2};
+        // var key2 = [2,3,4,5];
+        // myMap.set(key2, 1);
+
+        var myMap = new Map();
+        // myMap.set("female", 1);
+        // console.log(myMap.get("female"));
+        // myMap.has("female");
+        // console.log(myMap.size);
+
+        for (var user of userList) {
+            if (myMap.has(user.gender)) {
+                myMap.set(user.gender, myMap.get(user.gender) + 1);
+            } else {
+                myMap.set(user.gender, 1);
+            }
+
+        }
+
+        console.table(myMap);
+        console.log(myMap.keys);
+        console.log(myMap.values);
+        console.log(myMap.delete("female"));
+        console.log(myMap.clear);
+
+        //key로 오브젝트와 함수도 선언 가능.
+        const apples = {
+            name: "Apples"
+        };
+        // 오브젝트 key
+        myMap.set(apples, 1200);
+        console.log(myMap.get(apples));
+
+        // 함수 key
+        myMap.forEach(function (value, key) {
+            console.log(key);
+        });
+
+        // 문제 Map라는 객체를 이용해서 세대별 인원수가 몇명인지 알아내는 프로그램 짜보기
+        // 함수명 - getAgeGroup
+        // return - 각 연령대 별로 몇 명 있는지
+
+        function getAgeGroup() {
+
+            var ageMap = new Map();
+
+            for (var user of userList) {
+                if (ageMap.has("20s") && (user.age >= 20 && user.age < 30)) {
+                    ageMap.set("20s", ageMap.get("20s") + 1);
+                } else if (ageMap.has("30s") && (user.age >= 30 && user.age < 40)) {
+                    ageMap.set("30s", ageMap.get("30s") + 1);
+                } else if (ageMap.has("40s") && (user.age >= 40 && user.age < 50)) {
+                    ageMap.set("40s", ageMap.get("40s") + 1);
+                } else {
+                    ageMap.set("20s", 0);
+                    ageMap.set("30s", 0);
+                    ageMap.set("40s", 0);
+                }
+
+            }
+
+            return ageMap;
+        }
+
+        console.log(getAgeGroup());
+
+        function getAgeGroup2() {
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 오픈소스 : https://momentjs.com/ 자바스크립트에서 날짜 형식의 데이터를 파싱, 유효성 체크, 조작, 화면에 출력을 쉽게 할 수 있도록 도와주는 라이브러리. 날짜 관련 많이 씀. -->
+    <!-- min.js파일을 보면 안에 함수명이 난잡하다. 그 이유는 자바스크립트가 웹보안성이 약하기 때문에 이를 방어하기 위해서 일부러 함수명을 난잡하게 만든다. minify시킬 경우 주석이 날라가고 파일 사이즈가 줄어들어서 빨라지는 이점을 얻을 수 있다. 주석이 없고 한줄로 나오므로 해석하기 어렵다. 우리가 함수를 쓸 때는 자동으로 치환이 되서 연계된다 -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script> -->
+
+    <script src="../JS-Basic_me/scripts/moment.min.js"></script>
+    <script>
+        console.log(moment().add(5, "days").format("YYYY-MM-DD"));
+    </script>
+
+</body>
+
+</html>

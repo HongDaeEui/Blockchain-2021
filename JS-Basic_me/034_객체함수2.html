@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         //Date() PC의 시간이 나옴.
@@ -20,6 +22,7 @@
         console.log(d);
 
         var year = d.getFullYear();
+        // d.setFullYear
         console.log("year", year); //1,2,3.. 부터 시작
 
         var month = d.getMonth();
@@ -27,7 +30,7 @@
 
         const monthName = ["Jan", "Feb", "Mar", "Apr"];
         console.log(monthName[month]);
-        
+
 
         var day = d.getDate();
         console.log("day", day) //1,2,3..부터 시작
@@ -40,12 +43,12 @@
 
         var second = d.getSeconds();
         console.log("second", second);
-        
+
         // var millisecond = d.getMilliSeconds();
         // console.log("millisecond", millisecond);
-        
+
         console.log(d.getTime()); //1971년 1월 1일을 기준으로 밀리초의 값이 나옴. 날짜를 계산하기 위해서 사용됨.
-        
+
         var dayNameIndex = d.getDay(); //0-일요일, 1-월요일, 2-화요일..
         console.log("dayName", dayNameIndex);
 
@@ -56,8 +59,8 @@
 
         var d = new Date(now.getTime());
         console.log(d);
-        
-        
+
+
         //실습 해보기)
         //함수명 - getIntervalDate()
         //오늘을 기준으로 몇일 후, 몇일 전의 그 날짜
@@ -68,47 +71,45 @@
         // console.log(now.getTime());
 
         // function getIntervalDate(intervalDay) {
-            
+
         //     var now = new Date();
         //     now.getTime();
         //     var dayCaculation = now.getTime() + intervalDay*60*60*24*1000;
         //     var afterDay = new Date(dayCaculation);
-            
+
         //     return afterDay;
         // }
 
         // console.log(getIntervalDate(3));
 
-        
+
         function getIntervalDate(intervalDay) {
             var now = new Date();
             // return new Date(now.getTime()+ ((60 * 60 * 24 * 1000) * intervalDay)); 
-            var d = new Date(now.getTime()+ ((60 * 60 * 24 * 1000) * intervalDay));
+            var d = new Date(now.getTime() + ((60 * 60 * 24 * 1000) * intervalDay));
             var year = d.getFullYear();
-            var month = d.getMonth()+1;
+            var month = d.getMonth() + 1;
             var day = d.getDate();
 
-            return year + "/" + month.toString().padStart(2,0) + '/' +day;
-            
+            return year + "/" + month.toString().padStart(2, 0) + '/' + day;
+
         }
 
         function getIntervalDate(intervalDay, format) {
             var now = new Date();
-            var d = new Date(now.getTime()+ ((60 * 60 * 24 * 1000) * intervalDay));
+            var d = new Date(now.getTime() + ((60 * 60 * 24 * 1000) * intervalDay));
             var year = d.getFullYear();
-            var month = d.getMonth()+1;
+            var month = d.getMonth() + 1;
             var day = d.getDate();
 
-            return format.replace("YYYY", year).replace("MM", month.toString().padStart(2,0)).replace("DD", day);
-            
+            return format.replace("YYYY", year).replace("MM", month.toString().padStart(2, 0)).replace("DD", day);
+
         }
 
         console.log(getIntervalDate(-5, "YYYY-MM-DD"));
         console.log(getIntervalDate(-5, "YYYY.MM.DD"));
         console.log(getIntervalDate(-5, "DD.MM.YYYY"));
-        
-        
-        
     </script>
 </body>
+
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../JS-Basic_me/4-04.user_data.js"></script>
+    <script src="./scripts/common.js"></script>
+
+    <script>
+        var ageGroup = getAgeGroup(userList, "age");
+        console.table(ageGroup);
+    </script>
+
+
+    <script>
+        var newUser = [{
+                name: "유재석",
+                nai: 41,
+            },
+            {
+                name: "지석진",
+                nai: 46,
+            },
+            {
+                name: "하하",
+                nai: 31,
+            },
+            {
+                name: "하석진",
+                nai: 36,
+            }
+        ];
+
+        var newageGroup = getAgeGroup(userList, "age");
+        console.table(newageGroup);
+    </script>
+</body>
+
+</html>

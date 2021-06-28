@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Json 객체, 웹에서 데이터를 주고받는 가장 많이 쓰이는 포맷
+        // 개발자 도구 -> 네트워크 -> filter : XHR -> ex) naver.com에서 test.json (오브젝트랑 비슷하게 생겼음) for문 돌리면서 데이터를 호출해서 받아옴.
+        // const newsList = test.json 파일
+
+        var productlist = {
+            // JSON 포맷을 쓸 때는 무조건 ""를 써야함. 
+            date: [{
+                    name: "솔의눈",
+                    price: 700
+                },
+                {
+                    name: "커피",
+                    price: 700
+                },
+                {
+                    name: "파워에이드",
+                    price: 1200
+                },
+                {
+                    name: "오렌지",
+                    price: 1000
+                },
+                {
+                    name: "보리차",
+                    price: 1200
+                },
+                {
+                    name: "밀키스",
+                    price: 800
+                }
+            ]
+
+        };
+
+        console.log(productlist);
+
+        var jsonString = JSON.stringify(productlist);
+
+        console.log(jsonString); // 오브젝트형을 문자형으로 바꿈. 
+
+        var jsonObject = JSON.parse(jsonString); //문자형을 다시 오브젝트형으로 바꿈.
+
+        console.log(jsonObject);
+
+        // 나중에 get방식, post방식을 쓸 때 필요함. 
+    </script>
+</body>
+
+</html>

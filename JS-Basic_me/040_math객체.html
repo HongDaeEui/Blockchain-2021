@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math 객체
+        // 
+
+        // round() - 파라미터로 전달받은 숫자형 데이터를 반올림 처리 함
+        console.log(Math.round(4.9));
+        console.log(Math.round(4.4));
+        console.log(Math.round(-4.2));
+
+        // ceil() - 파라미터로 전달받은 숫자형 데이터를 무조건 올림 처리해서 정수로 만듬
+        // 실무) 전체 페이지 수를 짤 때 총 몇 페이지가 필요한지 올림해서 쉽게 구할 수 있음
+        console.log(Math.ceil(4.4));
+
+        // floor() - 무조건 내림
+        console.log(Math.floor(4.9));
+
+        // trunc() - 소수점 이하는 무조건 버리고 정수 부분만 반환
+        console.log(Math.trunc(4.9));
+
+        // sign(), 숫자가 양수이면 +1, 음수이면 -1, 0이면 0
+        console.log(Math.sign(0));
+
+        // pow () - 제곱
+        console.log(Math.pow(8, 2));
+
+        // sqrt() - 루트값
+        console.log(Math.sqrt(64)); //8 
+
+        // abs() - 음수이면 음수 부호 없애고, 무조건 양수 반환
+        console.log(Math.abs(-4.47)); // 4.47
+
+        // min(), max()
+        console.log(Math.min(0, 23, 12, 45, 33));
+        console.log(Math.max(0, 24, 2525, 113, 425));
+
+        // sin, cos을 실무에서 쓴 적이 별로 없음.
+        // 가장 빈번하게 쓰는 함수
+
+        // random() - 실행할 때 마다 무작위 숫자형 데이터가 나오는데 0보다 크고, 1보다 작은 수
+        console.log(Math.random());
+        console.log(Math.floor(Math.random() * 10)); // 0~9 사이의 숫자, floor 지정된 숫자보다 작거나   같은 최대의 정수를 반환함.
+
+        console.log(Math.floor(Math.random() * 10) + 1); // 1~10 사이의 숫자
+
+        // max와 min 사이의 임의의 수 구현
+        function getRandomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        console.log(getRandomInteger(11, 20));
+
+        // 가위, 바위, 보 함수 만들기
+        // 함수명 - rspPlayer
+        // 파라미터 1개 - "가위", "바위", "보"
+        // const arrRsp = ["가위", "바위", "보"];
+        // random 함수를 써서 0~2까지 정수를 무작위로 나오게 해서...
+        // 이것을 arrRsp 배열에 인덱스 번호를 넣으면    
+        // return - {userRsp:"", arrRsp.indexOF(playerRsp): "", winner:1,0,-1}
+
+
+        function rspPlayer(playerRsp) {
+            const arrRsp = ["가위", "바위", "보"];
+
+            let comRsp = arrRsp[getRandomInteger(0, 2)];
+            let winner = "";
+
+
+            //비긴 경우
+            if (playerRsp == comRsp) {
+                winner = "비김";
+            }
+            // 플레이어가 이긴 경우
+            else if ((playerRsp == "바위" && comRsp == "가위") || (playerRsp == "보" && comRsp == "바위") || (playerRsp ==
+                    "가위" && comRsp == "보")) {
+                winner = "이김";
+            }
+            // 플레이어가 진 경우
+            else if ((playerRsp == "가위" && comRsp == "바위") || (playerRsp == "바위" && comRsp == "보") || (playerRsp ==
+                    "보" && comRsp == "가위")) {
+                winner = "짐";
+            }
+
+            return {
+                playerRsp,
+                comRsp,
+                winner
+            };
+
+        }
+
+        console.log(rspPlayer("바위"));
+
+
+        function rspPlayer2(userRsp) {
+            const rsp = ["가위", "바위", "보"];
+            const playerRsp = rsp[getRandomInteger(0, 2)];
+            const winValue = {
+                "가위": "보",
+                "바위": "가위",
+                "보": "바위"
+            };
+
+            return {
+                "userRsp": userRsp,
+                "playerRsp": playerRsp,
+                "winner": (userRsp == playerRsp) ? 0 : (winValue[userRsp] == playerRsp) ? 1 : -1
+            };
+
+        }
+
+        console.log(rspPlayer2("가위"));
+    </script>
+
+</body>
+
+</html>

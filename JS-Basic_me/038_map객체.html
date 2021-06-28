@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <script src="../../ClassEdu/javascript-basic-main/javascript-basic-main/scripts/4-04.user_data.js">
+    <script src="4-04.user_data.js">
     </script>
     <script>
         // set과 달리 현재 실무에서 쓰이고 있음.
@@ -83,8 +83,45 @@
         console.log(getAgeGroup());
 
         function getAgeGroup2() {
+            let userAgeGroup = new Map();
 
+            for (var user of userList) {
+                // "25"
+                var ageGroup = user.age.toString().charAt(0) + "0"; //"20"
+
+                if (userAgeGroup.has(ageGroup)) {
+                    userAgeGroup.set(ageGroup, userAgeGroup.get(ageGroup) + 1);
+                } else {
+                    // 0인덱스
+                    // userAgeGroup.set("20", 1);
+                    userAgeGroup.set(ageGroup, 1);
+                }
+            }
+
+            return userAgeGroup;
         }
+
+        function getAgeGroup3() {
+            let userAgeGroup = {};
+
+            for (var user of userList) {
+                // "25"
+                var ageGroup = user.age.toString().charAt(0) + "0"; //"20"
+                // true, false를 리턴하는 것이 아님, undefied를 리턴함.
+
+                if (userAgeGroup[ageGroup]) {
+                    userAgeGroup[ageGroup] += 1;
+                } else {
+                    // 0인덱스
+                    // userAgeGroup.set("20", 1);
+                    userAgeGroup[ageGroup] = 1;
+                }
+            }
+
+            return userAgeGroup;
+        }
+
+        console.log(getAgeGroup3());
     </script>
 </body>
 

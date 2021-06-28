@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="deleteItem()">삭제</button>
+    <a href="http://naver.com" target="blank">Naver</a>
+    <script>
+        //Window 객체 - 전역객체, Global 객체
+        //alert("이것은 alert창입니다");
+
+        //삭제여부 창
+        // if (confirm("정말 삭제하시겠습니까?")) {
+        //     // 삭제 로직
+        // }
+
+        function deleteItem() {
+            if (confirm("정말 삭제하시겠습니까?")) {
+                // 삭제 로직
+            }
+        }
+
+        //비밀번호 입력창
+        var pass = prompt("비밀번호를 입력하세요.");
+        console.log(pass);
+        if (pass == null) {
+            // 취소 버튼을 누른 경우
+        } else if (pass == "") {
+
+        } else if (pass != "") {
+            console.log(pass);
+
+        }
+
+        //새창을 오픈
+        window.open("http://naver.com");
+
+        //setTimeout(), 일정 시간 뒤에 프로그램을 실행시킴, 실무에서 많이 쓰임
+        setTimeout(function () {
+            alert("프로그램 실행");
+        }, 2000); //millisecond 단위
+
+        //setInterval(), 특정 주기로 프로그램이 실행 됨, HTML5방식 나오기 이전에 주식 차트에서 데이터가 계속 갱신 화면 만들 때 쓰임
+        setInterval(function () {
+            console.log("프로그램 실행");
+        }, 1000);
+
+        // 중단시키는 함수
+
+        var count = 0;
+
+        setInterval(function () {
+            if (count < 5) {
+                console.log("프로그램 실행:" + count);
+                count++;
+            } else {
+                console.log("종료");
+                clearInterval(fnc); // 종료시킬 변수명이 필요
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

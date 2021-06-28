@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="javascript-basic-main/javascript-basic-main/scripts/4-04.user_data.js"></script>
+    <script>
+        function getUserList(gender) {
+
+            var outputUserList = [];
+
+            for (var user of userList) {
+                if (user.gender == gender) {
+                    outputUserList.push(user);
+                }
+            }
+            return outputUserList
+        }
+
+        console.table(getUserList("male"));
+        console.table(getUserList("female"));
+    </script>
+</body>
+
+</html>
+
+
+//JavaScript 데이터 만들기 꿀팁 공개
+// https://www.json-generator.com/에서 Generate 클릭

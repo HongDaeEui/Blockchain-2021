@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var productList = [{
+                name: "솔의눈",
+                price: 700
+            },
+            {
+                name: "커피",
+                price: 700
+            },
+            {
+                name: "파워에이드",
+                price: 1200
+            },
+            {
+                name: "제로콜라",
+                price: 1600
+            },
+            {
+                name: "벼락식혜",
+                price: 800
+            }
+        ];
+
+        var inputCoin = 800;
+        var resultDrink = [];
+
+        for (drink of productList) {
+            if (drink.price <= inputCoin) {
+                resultDrink.push(drink);
+            }
+        }
+
+        console.table(resultDrink);
+    </script>
+</body>
+
+</html>

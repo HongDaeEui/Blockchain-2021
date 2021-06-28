@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //while문, do-while문
+        // 조건을 체크하고 실행
+        // let i = 1;
+        // while (i <= 10) {
+        //     //코드 작성
+        //     console.log(i);
+        //     i++;
+        // }
+
+        // 먼저 실행하고, 조건을 체크
+        // let i = 1;
+        // do {
+        //     console.log(i);
+        // } while (i <= 10);
+
+        // for문은 길이를 갖고 있는 배열 데이터에 쓰이지만, while문은 계속 반복하는 것을 할 때 사용하기 좋다. 
+        var inputPrice = 7000;
+        var coinUnit = 500;
+        var coinCount = 0;
+        while (inputPrice > 0) {
+            inputPrice = inputPrice - coinUnit * coinCount;
+            console.log(inputPrice);
+            coinCount++;
+        }
+
+
+        // var i = 11;
+        // var point = 0;
+
+        // while (point <= 100) {
+        //     //코드작성
+        //     point += 4;
+        //     console.log(i);
+        //     // i++;   종료할 수 있는 조건 필요
+        // }
+
+        // var i = 11;
+        // do {
+        //     i++; // 종료 조건 필요  
+        //     console.log(i);
+        // } while (i <= 10);
+    </script>
+</body>
+
+</html>

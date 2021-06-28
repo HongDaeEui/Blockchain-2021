@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //함수, 재사용할 수 있음, 코드의 품질이 좋아짐(개발 효율 증가), 코드의 가독성이 높아짐
+
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+
+        function calculator(n1, n2) {
+            let y = n1 + n2;
+            return y;
+        }
+
+        let sum = add(10, 4);
+        console.log(sum);
+
+        console.log(add(12, 7));
+        console.log(add(43, 3));
+
+        console.log(10 + 4);
+        console.log(12 + 7);
+
+        function getFullName(firstName, lastName) {
+            return firstName + "" + lastName;
+        }
+
+        getFullName("John", "Doe");
+
+        //파라미터와 리턴은 필수 요소가 아님, 바뀔 수가 있음.
+        function calculator(n1, n2, n3) {
+            let y = n1 + n2;
+            // return y;
+        }
+    </script>
+</body>
+
+</html>

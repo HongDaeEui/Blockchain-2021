@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 조건문 0 if
+        // 만일 () {
+        // 뭐뭐 해야지,
+        // }
+
+        // if(조건식) {
+        //     //코드선언
+        // }
+
+        var age = 17;
+        var isAdult = false;
+
+        if (age >= 19) {
+            isAdult = true;
+        }
+
+        if (isAdult) {
+            //성인에 맞는 코드를 실행해
+        } else {
+            //isAdult == false, 무조건 else 블록 코드 실행 
+        }
+
+        var age = 7;
+        var isFree = false;
+
+        if (age >= 70) {
+            isFree = true;
+        } else if (age < 8) {
+            isFree = true;
+        }
+        //  else {
+        //     isFree = false;
+        // } 안써도 isFree false로 도출됨.
+
+        var greeting = "Good morning";
+        var time = 18;
+
+        if (time <= 10) {
+            greeting = "Good morning!"
+        } else if (time <= 16) {
+            greeting = "Good afternoon!"
+        } else if (time <= 20) {
+            greeting = "Good evenin!"
+        } else if (time > 20) {
+            greeting = "Good night!"
+        }
+
+
+        console.log(greeting);
+    </script>
+</body>
+
+</html>

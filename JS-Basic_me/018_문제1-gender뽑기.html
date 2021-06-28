@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="javascript-basic-main/javascript-basic-main/scripts/4-04.user_data.js"></script>
+    <script>
+        // 문제1. userList의 데이터에서 gender가 male 인 사람만  새 배열 maleUserList에 담고 console창에 출력하세요.
+
+        var maleUserList = [];
+        /* 
+                for (var user of userList) {
+                    if (user.gender == "male") {
+                        maleUserList.push(user);
+                    }
+                }
+                console.log(maleUserList);
+                console.table(maleUserList); //배열을 찍을 경우 보기 좋게 테이블로 출력 */
+
+
+        for (var index in userList) {
+            // console.log(userList[index]);
+            if (userList[index].gender == "male") {
+                maleUserList.push(userList[index]);
+            }
+        }
+        console.table(maleUserList);
+
+        // console.table(userList.fitter(u => u.gender == "male")); 한줄로 가능 나중에 배움 !
+    </script>
+</body>
+
+</html>
+
+
+//JavaScript 데이터 만들기 꿀팁 공개
+// https://www.json-generator.com/에서 Generate 클릭

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var productList = [{
+                name: "솔의눈",
+                price: 700
+            },
+            {
+                name: "커피",
+                price: 700
+            },
+            {
+                name: "파워에이드",
+                price: 1200
+            },
+            {
+                name: "제로콜라",
+                price: 1600
+            },
+            {
+                name: "벼락식혜",
+                price: 800
+            }
+        ];
+
+        // 함수를 선언합니다.
+        // 함수 이름은 getProductList
+        // 파라미터는 inputCoin
+        // inputCoin으로 구매할 수 있는 음료 목록을 productList 배열에서 추출해서
+        // 새로운 배열로 만들어서
+        // 그녀석을
+        // return 해주세요.
+        // 받는 쪽에서는 var, let outputList = 
+        // console.table(putputList);
+
+
+        // 자바스크립트에서는 함수를 최우선으로 인식한다. 그래서 function이 아래 있어도 먼저 읽는다.
+        // function showProductList(inputCoin) {
+        //     let outputList = [];
+        //     for (let drink of productList) {
+        //         if (drink.price <= inputCoin) {
+
+        //             outputList.push(drink);
+        //         }
+        //     }
+        //     return outputList;
+        // }
+
+        // showProductList(1200);
+        // console.table(outputList);
+
+
+        // 변수명 자체가 함수의 이름이 된다. 하지만 자바스크립트가 최우선 인식하지 않아 함수에 사용되는 변수보다 나중에 선언이 되어 있으면 오류가 날 수 있다. 
+
+        var showProductList = function (inputCoin) {
+            let outputList = [];
+            for (let drink of productList) {
+                if (drink.price <= inputCoin) {
+
+                    outputList.push(drink);
+                }
+            }
+            return outputList;
+        }
+
+
+        // 문제2 : 숫자를 전달하여 1부터 그 수까지의 합을 출력 / 호출 후 결과를 넘겨받아 출력
+
+        function cal2(secNum) {
+            var temp = 0;
+            for (var i = 1; i <= secNum; i++) {
+                temp += i;
+            }
+            return temp;
+        }
+    </script>
+</body>
+
+</html>

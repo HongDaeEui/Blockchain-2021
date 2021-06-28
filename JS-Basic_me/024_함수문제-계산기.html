@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 두 수를 더하고, 빼고, 곱하고, 나눌 수 있는 계산기 함수를 만드시오.
+        // 파라미터는 n1, n2, operator 입니다.
+        // operator는 +, -, *, /를 받을 수 있습니다.
+        // return은 두 수를 연산한 결과 값입니다
+
+        function Calculator(n1, n2, operator) {
+
+            if (operator == "+") {
+                var result = n1 + n2;
+
+            } else if (operator == "-") {
+                var result = n1 - n2;
+
+            } else if (operator == "*") {
+                var result = n1 * n2;
+
+            } else if (operator == "/") {
+                var result = n1 / n2;
+            }
+            return result
+        }
+
+        console.log(Calculator(5, 6, "+"));
+        console.log(Calculator(10, 6, "-"));
+        console.log(Calculator(3, 7, "*"));
+        console.log(Calculator(8, 4, "/"));
+    </script>
+</body>
+
+</html>

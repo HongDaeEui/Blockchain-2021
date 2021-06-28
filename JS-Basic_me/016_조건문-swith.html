@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //조건문 - switch 
+        // 상수값으로 정해진 값을 비교할 때
+
+        var d = new Date();
+        var day = d.getDay();
+        console.log("day", day);
+        var dayName = "";
+
+        // 간단하게 배열로 짜는법
+        var dayName = {
+            "일요일",
+            "월요일",
+            "화요일",
+            "수요일",
+            "목요일",
+            "금요일",
+            "토요일"
+        };
+        console.log(dayName[day]);
+
+
+        switch (day) {
+            case 0:
+                dayName = "일요일";
+                break;
+            case 1:
+                dayName = "월요일";
+                break;
+            case 2:
+                dayName = "화요일";
+                break;
+            case 3:
+                dayName = "수요일";
+                break;
+            case 4:
+                dayName = "목요일";
+                break;
+            case 5:
+                dayName = "금요일";
+                break;
+            case 6:
+                dayName = "토요일";
+                break;
+            default:
+                dayName = "";
+                break;
+        }
+    </script>
+</body>
+
+</html>

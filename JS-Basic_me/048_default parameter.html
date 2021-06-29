@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Default Function Parameter - 함수의 파라미터 기본 값을 정해준다.
+        //실무에서 진짜 많이 쓴다.
+        function say(message = "파라미터가 안들어왔네요.") {
+            console.log(message);
+        }
+
+        say("함수 호출- 메시지");
+
+        function add(x1, x2) {
+            return x1 + x2;
+        }
+
+        console.log(add(5)); //만약 파라미터를 부족하게 입력하면 NaN이 출력된다. 
+
+
+        function add2(x1, x2) {
+            if (x1 != undefined && x2 != undefined) {
+                return x1 + x2;
+            } else {
+
+            }
+        }
+        //default function parameter가 없었을 때 이렇게 구현해야 했다
+
+
+        function add3(x1 = 1, x2 = 1) {
+            return x1 + x2;
+        }
+
+        console.log(add3()); //파라미터가 전달되지 않아도 default 값이 적용된다.
+
+        //클라이언트가 데이터를 서버에 던질 때 트래픽이 발생한다. default parameter를 정해놓았다면
+        //사용자가 값을 입력안하고 버튼을 눌렀을 때 에러가 아닌 일단 default값을 띄워주고 고치는 식으로 이용한다.
+    </script>
+</body>
+
+</html>

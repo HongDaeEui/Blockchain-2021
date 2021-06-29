@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //stric mode, 왠만하면 error가 나지 않는 자바스크립트의 특성으로 정말 제대로 만들었는지 검증할 수 있게 해주는 모드
+
+        function myFunction() {
+            y = 2;
+            console.log(y);
+        }
+
+        myFunction(); //2, 선언자가 없는 오류인데 결과가 출력이 됨
+
+        console.log(y); //2, local scope인데 global scope로 처리됨
+
+
+        //use strict를 쓰면 stric mode 시작
+        function myFunction() {
+            "use strict"
+
+            x = 2;
+            console.log(x);
+        }
+    </script>
+</body>
+
+</html>

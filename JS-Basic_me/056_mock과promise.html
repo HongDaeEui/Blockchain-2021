@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+        //promise// axios Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리, 인기있고 좋다
+        //https://joshua1988.github.io/web-development/javascript/promise-for-beginners/ 가이드
+    </script>
+
+    <script>
+        //Mock 서버 ,https://www.postman.com/downloads/ 다운
+        // *지금 하는 것은 개발자 100명 중 한 명 알까말까 하는 강사님의 노하우
+
+        const url = "https://7ea11585-6ca5-4d63-960c-0c79d6d01de2.mock.pstmn.io/getDrinkList";
+        //example의 get에 {{url}}/example이름을 적어준다.
+
+        // var data = axios.get(url); //비동기방식으로 호출
+        // console.log(data); //그러나 데이터가 오지 않았는데도 호출이 되어 나오지 않음, 비동기방식의 제약
+
+        function getData() {
+            return new Promise(function (resolve, reject) { //promise()안에 함수를 선언
+                axios.get(url).then(function (response) { //url을 받아오고 그 결과를 사용할 함수 선언, response가 받아온 데이터.
+                    resolve(response.data); //resolve로 responce.data를 받아옴.
+
+                });
+            });
+        }
+
+        getDAta().then(function (jsonData) {
+            console.log(jsonData.data);
+        }).catch(function (err) {
+            console.log(err);
+        });
+        //then은 reolve의 데이터를 받고, 그 데이터가 잘못되거나 시간이 경과하면 catch에 걸리면 err를 출력한다
+
+        //가져온 data를 출력
+        getData().then(function (data) {
+            console.log(data);
+        });
+    </script>
+</body>
+
+</html>

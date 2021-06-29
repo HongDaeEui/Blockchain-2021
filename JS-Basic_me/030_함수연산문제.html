@@ -8,25 +8,23 @@
 <body>
     <script src="../JS-Basic_me/javascript-basic-main/javascript-basic-main/scripts/4-04.user_data.js"></script>
     <script>
-
-        
         function getUserAgeSum() {
             let sum = 0;
 
-            for(let i=0;i<userList.length;i++) {
+            for (let i = 0; i < userList.length; i++) {
                 sum += userList[i].age;
             }
-            
+
             return sum;
         }
 
         function getUserAgeAvg() {
             let sum = 0;
 
-            for(let i=0;i<userList.length;i++) {
+            for (let i = 0; i < userList.length; i++) {
                 sum += userList[i].age;
             }
-            let avg = sum/userList.length
+            let avg = sum / userList.length
 
             return avg;
 
@@ -35,20 +33,20 @@
         function getUserAgeMin() {
             let minAge = Number.MAX_SAFE_INTEGER;
 
-            for(let i=0;i<userList.length;i++) {
-                if(userList[i].age < minAge) {
+            for (let i = 0; i < userList.length; i++) {
+                if (userList[i].age < minAge) {
                     minAge = userList[i].age;
                 }
             }
             return minAge;
         }
 
-        
+
         function getUserAgeMax() {
             let maxAge = 0;
 
-            for(let i=0;i<userList.length;i++) {
-                if(userList[i].age > maxAge) {
+            for (let i = 0; i < userList.length; i++) {
+                if (userList[i].age > maxAge) {
                     maxAge = userList[i].age;
                 }
             }
@@ -66,37 +64,35 @@
             let minAge = Number.MAX_SAFE_INTEGER;
             let maxAge = 0;
 
-            for(let i=0;i<userList.length;i++) {
+            for (let i = 0; i < userList.length; i++) {
                 sum += userList[i].age;
             }
 
-            for(let i=0;i<userList.length;i++) {
-                if(userList[i].age < minAge) {
+            for (let i = 0; i < userList.length; i++) {
+                if (userList[i].age < minAge) {
                     minAge = userList[i].age;
                 }
             }
 
-            for(let i=0;i<userList.length;i++) {
-                if(userList[i].age > maxAge) {
+            for (let i = 0; i < userList.length; i++) {
+                if (userList[i].age > maxAge) {
                     maxAge = userList[i].age;
                 }
             }
-            
-            let avg = sum/userList.length;
+
+            let avg = sum / userList.length;
 
             return {
-                sum : sum,
-                avg : avg,
-                maxAge : maxAge,
-                minAge : minAge
+                sum: sum,
+                avg: avg,
+                maxAge: maxAge,
+                minAge: minAge
             }
             //return은 오브젝트도 받을 수 있고, 키값과 밸류값이 같으면 밸류값만 적으면 키값을 자동으로 밸류값으로 잡아준다.
 
         }
 
         console.table(getUserAgeMath());
-        
-
     </script>
 </body>
 

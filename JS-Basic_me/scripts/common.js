@@ -1,3 +1,9 @@
+/** 함수 주석 달기
+ * 주어진 배열에서 연령대별 인원 수를 구하는 함수이다 - 함수 설명
+ * @param {Array} users 파라미터 설명
+ * @param {Number} keyAge 파라미터 설명
+ * @returns {Array} 20대, 30대, 40대 별 명수 - 반환값 설명
+ */
 function getAgeGroup(users, keyAge) {
     let userAgeGroup = {};
 

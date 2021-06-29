@@ -1,0 +1,60 @@
+ㅈ
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+        //promise// axios Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리, 인기있고 좋다
+    </script>
+
+    <script>
+        const url = "https://7ea11585-6ca5-4d63-960c-0c79d6d01de2.mock.pstmn.io/";
+        //Async-Await
+
+        //async로 받은 결과를 리턴할 때까지 기다리겠다(await)
+        //어떤 url이든 던져주면 return을 해준다
+
+        // async function api(url) {
+        //     return (await axios.get(url)).data; //.data를 해줘야만 data만 받아올 수 있음
+        // }
+
+        //Data를 받아 오는 것
+        //path에 따라 받아오고자 하는 데이터를 받아 올 수 있음
+        //Async-Await
+
+        // async function getData(path) {
+        //   var data = (await api(url + path));
+        //   console.log(path, data);
+        // }
+
+        // async function getUserList() {
+        //     var data = (await api(url + "getUserList"));
+        //     console.log(data);
+        // // }
+
+
+        // async function getDrinkList() {
+        //     var data = (await api(url + "getDrinkList"));
+        //     console.log(data);
+        // }
+
+        // getDrinkList();
+        // getUserList();
+
+        //fetch() 함수로 받아오기, 데이터 형태에 따라서 불편한 점이 발생
+        // fetch 함수는 URL을 인자로 받아서 Promise 타입의 객체를 반환합니다. 반환된 객체는, API 호출이 성공했을 경우에는 응답(response) 객체를 resolve하고, 실패했을 경우에는 예외(error) 객체를 reject한다.
+
+        // fetch(url + "getUserList").then(function (response) {
+        //     return response.json();
+        // }).then(function (data) {  //json 기다리는 시간도 필요해서 .then을 추가해줌
+        //     console.log(data);
+        // });
+    </script>
+</body>
+
+</html>

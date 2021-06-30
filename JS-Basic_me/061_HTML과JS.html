@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="txt1"><br>
+    <input type="text" name="" id="txt2"><br>
+
+    <h2>당신이 관심있어 하는 프로그래밍 언어는?</h2>
+    <label>
+        <input type="checkbox" name="chk_interest" id="" value="js">자바스크립트
+    </label>
+    <label>
+        <input type="checkbox" name="chk_interest" id="" value="html">HTML
+    </label>
+    <label>
+        <input type="checkbox" name="chk_interest" id="" value="css">CSS
+    </label>
+
+    <p>ABC</p>
+    <p>DEF</p>
+
+    <div>
+        <label><input type="radio" name="city" id="" value="제주">제주</label>
+        <label><input type="radio" name="city" id="" value="울산">울산</label>
+        <label><input type="radio" name="city" id="" value="서울">서울</label>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <!-- <button onclick="myFunction();" id="btnSave" style="padding:10px">저장</button> -->
+        <!-- <button onclick="myFunction(this);" id="btnSave" style="padding:10px">저장</button>
+        this를 줘서 자바스크립트에서 간편하게 가져옴 -->
+        <button onclick="myFunction(event);" id="btnSave" style="padding:10px">저장</button>
+    </div>
+
+    <script>
+        function myFunction(e) {
+            // var btnEle = document.querySelector("#btnSave").disabled = true; //버튼 누르는 순간 비활성화
+
+            // setTimeout(function () {
+            //     btnEle.dsiabled = false;
+            // }, 2000); //비활성화된 버튼을 2000ms후에 활성화
+
+            var btnELe = e.target;
+            btnELe.disabled = true;
+            //console.log(e);
+
+            // var ele = document.getElementById("txt1"); //id를 가져옴
+            // console.log(ele);
+
+            // var txt1Value = ele.value; //요소에 해당하는 value를 가져옴
+            // console.log(txt1Value);
+
+            // var ele2 = document.getElementById("txt2"); //value 값을 넣어줄 수 있음
+            // ele2.value = "가나다";
+            // ele.setAttribute("value", "가나다");
+
+
+            // var pTag = document.getElementsByTagName("p"); //태그네임으로 가져옴, Element's' 태그들을 다 가져온다.
+            // console.log(pTag);
+
+            // var chks = document.getElementsByName("chk_interest"); //네임으로 가져옴
+            // console.log(chks);
+
+            // for (var chk of chks) {
+            //     if (chk.checked) {
+            //         console.log(chk.value)
+            //     }
+            // } //사용자가 어떤 체크를 했는지 값을 알려줌
+
+            //더 간단하게 하는 법, querySelector
+
+            // var checkedItems = document.querySelectorAll("[name=chk_interest]:checked")
+            // /* CSS와 동일하게 chk_interest의 속성을 골라 가져올 수 있음 */
+            // for (var chk of checkedItems) {
+            //     console.log(chk.value);
+            // }
+
+            console.log(document.querySelector("[name=city]:checked").value);
+            // 단 선택하지 않으면 존재하지 않는 요소의 value를 불러오라하므로, 에러 발생함
+
+            // var rdoCities = document.getElementsByName("city");
+            // for (var rdo of rdoCities) {
+            //     if (rdo.checked) {
+            //         console.log(rdo.value)
+            //     }
+            // }
+
+            // document.getElementsByClassName
+
+            //실무에서 id, name, checkbox 이 3가지를 제일 많이 쓴다
+        }
+    </script>
+</body>
+
+</html>

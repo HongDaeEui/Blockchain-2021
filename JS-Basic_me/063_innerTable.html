@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="doSearch();">조회</button>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>성별</th>
+                <th>회사</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="4-04.user_data.js"></script>
+    <script>
+        function doSearch() {
+            var h = [];
+            for (var user of userList) {
+                h.push('<tr>');
+                h.push('<td>' + user.name + '</td>');
+                h.push('<td>' + user.gender + '</td>');
+                h.push('<td>' + user.company + '</td>');
+                h.push('</tr>');
+            }
+            console.log(h.join(""));
+
+
+            document.getElementById("tb").innerHTML = h.join("");
+        }
+    </script>
+</body>
+
+</html>

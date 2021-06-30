@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>여기는 h1 영역</h1>
+    <!-- beforebegin -->
+    <ul id="myUL">
+        <!-- afterbegin -->
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <!-- beforeend -->
+    </ul>
+    <!-- afterend -->
+    <h2>여기는 H2 영역</h2>
+
+    <button onclick="myFunction()">클릭</button>
+    <script>
+        function myFunction() {
+            //inserAdjacentHTML()
+            //파라미터가 2개
+            //afterbegin - 자식노드의 첫번쨰
+            //afterend - 내가 접근한 DOM요소에 바로 다음
+            //befroebegin - 현재 접근한 노드 전에 들어감
+            //beforeend - 자식노드의 마지막
+
+            var addHTML = "<li>새로운 항목</li>";
+
+            document.getElementById("myUL").insertAdjacentHTML("afterbegin", addHTML);
+            document.getElementById("myUL").insertAdjacentHTML("afterend", addHTML);
+            document.getElementById("myUL").insertAdjacentHTML("beforebegin", addHTML);
+            document.getElementById("myUL").insertAdjacentHTML("beforeend", addHTML);
+        }
+    </script>
+</body>
+
+</html>

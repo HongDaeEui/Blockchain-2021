@@ -180,11 +180,11 @@
                 total_input_amount += amount;
                 total_customer_amount -= amount;
                 total_vending_amount += amount;
+
+                document.getElementById("display1").value = total_input_amount
             } else {
                 document.getElementById("display1").value = "잔액부족";
             }
-
-            // document.getElementById("display1").value = "";
 
         }
 

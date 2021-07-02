@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="vendingmachine.css">
     <title>Document</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
@@ -14,7 +16,6 @@
     //코카콜라 - 700원, 오렌지주스 - 1200원, 커피 - 500원, 물 -700원
     //보리차 - 1200원, 포카리 - 1000원, 뽀로로 - 1300원, 핫식스 - 1000원, 알로에 - 1100원
     //각각의 음료는 총 5개씩 있습니다
-
     //고객 지갑 - 10000원
     //음료자판기 최초 잔도 - 1000원
     //동전 투입 - 100원, 500원, 1000원 -->
@@ -41,45 +42,51 @@
             </div>
 
             <div class="item">
-                <img class="image eA1" src="https://image.flaticon.com/icons/png/512/1257/1257653.png" alt="">
+                <img class="image eA1" id="item1" src="https://image.flaticon.com/icons/png/512/1257/1257653.png"
+                    alt="">
             </div>
 
             <div class="item">
-                <img class="image eA2" src="https://image.flaticon.com/icons/png/512/734/734752.png" alt="">
+                <img class="image eA2" id="item2" src="https://image.flaticon.com/icons/png/512/734/734752.png" alt="">
             </div>
 
             <div class="item">
-                <img class="image eA3" src="https://image.flaticon.com/icons/png/512/2872/2872362.png" alt="">
+                <img class="image eA3" id="item3" src="https://image.flaticon.com/icons/png/512/2872/2872362.png"
+                    alt="">
             </div>
 
             <div class="item">
-                <img class="image eA4" src="https://image.flaticon.com/icons/png/512/824/824239.png" alt="">
+                <img class="image eA4" id="item4" src="https://image.flaticon.com/icons/png/512/824/824239.png" alt="">
             </div>
 
             <div class="item">
-                <img class="image eA5" src="https://image.flaticon.com/icons/png/512/3081/3081162.png" alt="">
+                <img class="image eA5" id="item5" src="https://image.flaticon.com/icons/png/512/3081/3081162.png"
+                    alt="">
             </div>
 
             <div class="item">
-                <img class="image eA6" src="https://image.flaticon.com/icons/png/512/3100/3100945.png" alt="">
+                <img class="image eA6" id="item6" src="https://image.flaticon.com/icons/png/512/3100/3100945.png"
+                    alt="">
             </div>
 
             <div class="item">
-                <img class="image eA7" src="https://image.flaticon.com/icons/png/512/826/826963.png" alt="">
+                <img class="image eA7" id="item7" src="https://image.flaticon.com/icons/png/512/826/826963.png" alt="">
             </div>
 
             <div class="item">
-                <img class="image eA8" src="https://image.flaticon.com/icons/png/512/1488/1488801.png" alt="">
+                <img class="image eA8" id="item8" src="https://image.flaticon.com/icons/png/512/1488/1488801.png"
+                    alt="">
             </div>
 
             <div class="item">
-                <img class="image eA9" src="https://image.flaticon.com/icons/png/512/4995/4995858.png" alt="">
+                <img class="image eA9" id="item9" src="https://image.flaticon.com/icons/png/512/4995/4995858.png"
+                    alt="">
             </div>
         </div>
 
         <div class="order">
             <div class="container">
-                <label>투입금액</label><input type="text" name="" class="visualize deposit" id="display1" value="100"
+                <label>투입금액</label><input type="text" name="" class="visualize deposit" id="display1" value="0"
                     readonly></input>
 
 
@@ -90,31 +97,44 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="btn letter" value="cola">cola</button>
-                    <button class="btn letter" value="juice">juice</button>
-                    <button class="btn letter" value="coffee">coffee</button>
-                    <button class="btn letter" value="warter">warter</button>
-                    <button class="btn letter" value="bori">bori</button>
-                    <button class="btn letter" value="pocari">pocari</button>
-                    <button class="btn letter" value="pororo">pororo</button>
-                    <button class="btn letter" value="hotsix">hotsix</button>
-                    <button class="btn letter" value="aloe">aloe</button>
+                    <button class="btn letter" id="btnDrink1" value=" cola"
+                        onclick="outDrink1();requestDrink(1)">cola</button>
+                    <button class="btn letter" id="btnDrink2" value="juice"
+                        onclick="outDrink2();requestDrink(2)">juice</button>
+                    <button class="btn letter" id="btnDrink3" value="coffee"
+                        onclick="outDrink3();requestDrink(3)">coffee</button>
+                    <button class="btn letter" id="btnDrink4" value="warter"
+                        onclick="outDrink4();requestDrink(4)">warter</button>
+                    <button class="btn letter" id="btnDrink5" value="bori"
+                        onclick="outDrink5();requestDrink(5)">bori</button>
+                    <button class="btn letter" id="btnDrink6" value="pocari"
+                        onclick="outDrink6();requestDrink(6)">pocari</button>
+                    <button class="btn letter" id="btnDrink7" value="pororo"
+                        onclick="outDrink7();requestDrink(7)">pororo</button>
+                    <button class="btn letter" id="btnDrink8" value="hotsix"
+                        onclick="outDrink8();requestDrink(8)">hotsix</button>
+                    <button class="btn letter" id="btnDrink9" value="aloe"
+                        onclick="outDrink9();requestDrink(9)">aloe</button>
                 </div>
 
                 <label>거스름돈</label><input type="text" name="" class="visualize change" id="display2" readonly></input>
+
+                <div id="output">
+                </div>
             </div>
 
         </div>
 
         <div class="grab">
             <div class="rectangle">
-                <label>음료수종류</label><input type="text" name="" class="visualize drink" id="display3" readonly></input>
+                <img class="image" name="outProduct" src="https://image.flaticon.com/icons/png/512/0/8.png" alt="">
             </div>
         </div>
 
     </div>
 
     <script>
+        var output = document.getElementById("output");
         let total_customer_amount = 10000;
         let total_vending_amount = 1000;
         let total_input_amount = 0;
@@ -181,6 +201,14 @@
                 total_customer_amount -= amount;
                 total_vending_amount += amount;
 
+
+                for (var drink of drinkList) {
+                    if (drink.price <= total_input_amount) {
+                        document.getElementById("btnDrink" + drink.drinkId).style.backgroundColor = "skyblue";
+                    }
+                }
+
+
                 document.getElementById("display1").value = total_input_amount
             } else {
                 document.getElementById("display1").value = "잔액부족";
@@ -190,6 +218,97 @@
 
 
         function requestDrink(drinkId) {
+            let drink = drinkList.filter(d => d.drinkId == drinkId)[0];
+            if (drink.stock > 0) {
+                if (total_input_amount >= drink.price) {
+                    let changes = total_input_amount - drink.price;
+                    if (total_vending_amount >= changes) {
+
+                        output.insertAdjacentHTML("beforeend",
+                            `<p>${drink.drinkName} 음료가 나왔습니다.`);
+                        document.getElementById("display2").value = changes;
+
+
+                        total_customer_amount += changes;
+                        drink.stock -= 1;
+                        total_input_amount -= drink.price;
+                        total_vending_amount -= changes;
+
+                        document.getElementById("display1").value = total_input_amount;
+                        output.insertAdjacentHTML("beforeend", `<p>이제 당신 지갑에는 총 ${total_customer_amount} 있습니다.</p>`);
+
+                        for (var list of drinkList) {
+                            document.getElementById("btnDrink" + list.drinkId).style.backgroundColor =
+                                "rgb(253, 15, 15)";
+                        }
+
+                    } else {
+                        output.insertAdjacentHTML("beforeend",
+                            `<p>음료자판기에 잔돈이 없어서 ${drink.drinkName} 음료를 구매할 수 없습니다.</p>`);
+                    }
+                } else {
+                    output.insertAdjacentHTML("beforeend",
+                        `<p>투입하신 금액은 총 ${total_input_amount}인데, 음료 가격은 ${drink.price}여서 구매할 수 없습니다.</p>`);
+                }
+
+            } else {
+                output.insertAdjacentHTML("beforeend", `<p>선택하신 음료 ${drink.drinkName}이 재고가 없습니다.</p>`);
+            }
+            output.scrollTop = output.scrollHeight;
+        }
+
+
+        function outDrink1() {
+            var src = jQuery('#item1').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink2() {
+            var src = jQuery('#item2').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink3() {
+            var src = jQuery('#item3').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink4() {
+            var src = jQuery('#item4').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink5() {
+            var src = jQuery('#item5').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink6() {
+            var src = jQuery('#item6').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink7() {
+            var src = jQuery('#item7').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink8() {
+            var src = jQuery('#item8').attr("src");
+            document.outProduct.src = src;
+
+        }
+
+        function outDrink9() {
+            var src = jQuery('#item9').attr("src");
+            document.outProduct.src = src;
 
         }
     </script>

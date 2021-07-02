@@ -30,7 +30,7 @@ body {
 
 .shelf {
     background-color: rgb(255, 31, 31);
-    width: 60%;
+    width: 50%;
     height: 1em;
     position: absolute;
     left: 21px;
@@ -67,7 +67,7 @@ body {
 }
 
 .item {
-    margin: auto;
+    margin-top: 20px;
     display: block;
     position: relative;
 }
@@ -89,6 +89,15 @@ body {
     width: 100%;
     height: 2em;
     border-radius: 50px;
+}
+
+#display1 {
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 10em;
+    border-radius: 5px;
+    font-size: 10px;
 }
 
 .moneybtn {
@@ -122,6 +131,7 @@ body {
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 3px;
+    font-size: 10px;
 }
 
 .grab {
@@ -133,12 +143,11 @@ body {
 }
 
 .rectangle {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(169, 177, 188);
     width: 80%;
     height: 5em;
     margin: 3em auto;
     border-radius: 15px;
-    text-align: center;
 }
 
 label {
@@ -149,12 +158,6 @@ label {
 
 }
 
-#output {
-    margin-top: 5px;
-    width: 100%;
-    height: 100px;
-    overflow-y: auto;
-    background: white;
-    border: 2px solid #222;
-    font-size: 12px;
+.pay {
+    display: block
 }

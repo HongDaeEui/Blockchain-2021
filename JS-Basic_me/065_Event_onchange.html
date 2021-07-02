@@ -21,7 +21,7 @@
         var cities = [{
                 countryCode: "ko",
                 cityCode: "02",
-                cityName: "서울"
+                cityName: "서울 "
             },
             {
                 countryCode: "ko",
@@ -72,11 +72,14 @@
                     h.push(`<option value="${city.cityCode}">${city.cityName}</option>`);
                 }
             }
+            console.log(h);
 
-            // console.log(h.join(""));
+            console.log(h.join(""));
 
             document.getElementById("sel_city").innerHTML = h.join("");
         }
+
+        console.log(document.getElementById("sel_city"));
 
         function myFunction() {
             console.log("이벤트 onclick를 통해서 발생");

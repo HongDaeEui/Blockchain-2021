@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display {
+            font-size: 15px;
+        }
+
+        .selection {
+            display: flex;
+        }
+
+        .select {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="selection">
+        <select class="select" name="" id="startStation">
+            <option value="">출발역 선택해주세요.</option>
+        </select>
+        <select class="select" name="" id="endStation">
+            <option value="">도착역 선택해주세요.</option>
+        </select>
+        <select class="select" name="" id="age">
+            <option value="">연령대 선택해주세요.</option>
+            <option value="adult">성인</option>
+            <option value="teenager">청소년</option>
+            <option value="kid">아이</option>
+        </select>
+        <button type="button" onclick="calFee();">조회</button>
+    </div>
+
+    <div id="display" style="width:100%;height:120px;overflow-y: auto;border:2px solid #222;"></div>
+    </div>
+    <script>
+        const subwayList = ["영등포구구청역", "당산역", "합정역", "홍대입구역", "신촌역", "이대역", "아현역", "충정로역", "시청역", "을지로3가역", "을지로4가역",
+            "동대문역사문화공원역", "신당역", "상왕십리역", "왕십리역", "한양대역", "뚝섬역", "성수역", "건대입구역", "구의역", "강변역", "잠실나루역", "잠실역",
+            "종합운동장역",
+            "삼성역", "선릉역", "역삼역", "강남역", "서초역", "방배역", "사당역", "낙성대역", "서울대입구역", "봉천역", "신림역", "신대방역", "구로디지털단지역",
+            "대림역",
+            "신도림역", "문래역"
+        ];
+
+        console.log(subwayList.length);
+
+        var h = [];
+        for (var i = 0; i < subwayList.length; i++) {
+            h.push(`<option value="${i}">${subwayList[i]}</option>`)
+        }
+        document.getElementById("startStation").insertAdjacentHTML("beforeend", h.join(""));
+
+        var g = [];
+        for (var j = 0; j < subwayList.length; j++) {
+            g.push(`<option value="${j}">${subwayList[j]}</option>`)
+        }
+        document.getElementById("endStation").insertAdjacentHTML("beforeend", g.join(""));
+
+
+
+
+        const intervalDistance = 3170; //3.17km
+        //성인일반 - 기본운임 : 10km 이내 - 1250원
+        //청소년 - 기본운임 : 10km 이내 - 720원
+        //어린이 - 기본운임 : 10km 이내 - 450원
+
+        //[추가운임] --distance
+        //10~50km 이내 - 5km 마다 100원 추가
+        //50km 초가 - 8km 마다 100원 추가
+
+        function calFee() {
+            var start = parseInt(document.getElementById("startStation").value);
+            var end = parseInt(document.getElementById("endStation").value);
+            var output = document.getElementById("output");
+
+            if (start <= end) {
+                var distance = 3.17 * (end - start);
+            } else {
+                var distance = 3.17 * (subwayList.length - start + end);
+            };
+
+            // console.log(distance);
+
+            var who = document.getElementById("age").value
+            if (distance <= 10) {
+                if (who == "adult") {
+                    var fee = 1250;
+                } else if (who == "teenager") {
+                    var fee = 720;
+                } else if (who == "kid") {
+                    var fee = 450;
+                }
+            } else if (distance <= 50) {
+
+                // console.log(distance);
+
+                if (who == "adult") {
+                    var fee = 1250 + 100 * Math.ceil((distance - 10) / 5);
+                } else if (who == "teenager") {
+                    var fee = 720 + 100 * Math.ceil((distance - 10) / 5);
+                } else if (who == "kid") {
+                    var fee = 450 + 100 * Math.ceil((distance - 10) / 5);
+                }
+
+
+
+            } else {
+
+                if (who == "adult") {
+                    var fee = 1250 + ((40 / 5) * 100) + 100 * Math.ceil((distance - 50) / 8);
+                } else if (who == "teenager") {
+                    var fee = 720 + ((40 / 5) * 100) + 100 * Math.ceil((distance - 50) / 8);
+                } else if (who == "kid") {
+                    var fee = 450 + ((40 / 5) * 100) + 100 * Math.ceil((distance - 50) / 8);
+                }
+
+
+            }
+            console.log(fee);
+
+            display.insertAdjacentHTML("beforeend", `<p>시작역은 ${subwayList[start]}, 도착역은 ${subwayList[end]}입니다.</p>`);
+            display.insertAdjacentHTML("beforeend", `<p>운임 거리 ${distance}km는 입니다.</p>`);
+            display.insertAdjacentHTML("beforeend", `<p>운임 요금 ${fee}은 입니다.</p>`);
+            display.scrollTop = display.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>
